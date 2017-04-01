@@ -24,15 +24,16 @@ public class Main {
     public static void main(String[] args) {
         //they should be changed
         dataset_path = win_dataset_path;
-        int mode = 2; //1: xlsx-->txt, 2: txt-->folia xml, 3: txt-->vector space
+        int mode = 1; //1: xlsx-->txt, 2: txt-->folia xml, 3: txt-->vector space
         int index_of_file_header_id = 6; //it is the table index of file, header and id
-        int applyAllFiles = 0; //1: apply to all files, 0: apply to one file
+        int applyAllFiles = 1; //1: apply to all files, 0: apply to one file
 
         switch (mode) {
             case 1: //mode 1: convert csv to txt
                 System.out.println("convert xlsx to txt");
                 if (applyAllFiles == 1) { //convert all files
                     for (int i = 1; i < 6; i++) {
+                        System.out.println("\n" + filenames[i]);
                         //String filename = filenames[i];
                         header = headers_of_foliaFile[i];
                         id = ids[i];

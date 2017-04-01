@@ -132,19 +132,18 @@ public class TXTtoFoliaXML {
     }
 
     public String convertSpecialCharacters(String w) {
-        switch (w.trim()) {
-            case "\"":
-                return "&quot;";
-            case "<":
-                return "&lt;";
-            case ">":
-                return "&gt;";
-            case "&":
-                return "&amp;";
-            case "'":
-                return "&apos;";
-            default:
-                break;
+        String s = w.trim();
+        if (s.equals("\"")) {
+            return "&quot;";
+        } else if (s.equals("<")) {
+            return "&lt;";
+        } else if (s.equals(">")) {
+            return "&gt;";
+        } else if (s.equals("&")) {
+            return "&amp;";
+        } else if (s.equals("'")) {
+            return "&apos;";
+        } else {
         }
         return w;
     }
