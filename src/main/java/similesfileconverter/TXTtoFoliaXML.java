@@ -241,10 +241,7 @@ public class TXTtoFoliaXML {
     }
 
     
-    
-    
-    
-    
+
     //[....]
     public String addModifiedPredSemsEntityAnnotation(String column, String[] sentence_words, int first_index, int second_index, int first_index_countword, int count_paragraph, int count_sentence) {
         String entityAnnotation = "";

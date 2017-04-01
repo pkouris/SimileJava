@@ -42,7 +42,7 @@ public class XLSXtoTXT {
             XSSFCell cell;
             Iterator rows = sheet.rowIterator();
             Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(txtFile), "UTF-8"));
-            writer.write("TEXT # SIM # GENDER # HEAD # LEMMA # MODIFIED PRED SEMS # TENOR GENERALISED SEMANTICS # MWE TYPE # PHENOMENON # DETERMINER # ΕMPHASIS # _IWO # _IXP-CREATIVE # _IXP-EXPANSION # IXP-N, IXP-W, IXP-PUNC # _MOD # _AGR # MWO, SANP, OTHER\n");//write first line
+            writer.write("TEXT # SIM # GENDER # HEAD # LEMMA # MODIFIED PRED SEMS # TENOR GENERALISED SEMANTICS # MWE TYPE # PHENOMENON # DETERMINER # ΕMPHASIS # _IWO # _IXP-CREATIVE # _IXP-EXPANSION # IXP-N, IXP-W, IXP-PUNC # _MOD # _AGR # MWO, SANP, OTHER # VAR\n");//write first line
             int count_xlsx_lines = 0; //it counts the number of lines of csv file
             int count_txt_lines = 0; //it counts the number of lines of txt file
             int flag = 0; //if flag is 0, it is a useful line
@@ -57,7 +57,7 @@ public class XLSXtoTXT {
                         flag = 1;
                     }
                 } else if (flag == 1) {
-                    for (int count_cells = 1; count_cells < 18; count_cells++) {
+                    for (int count_cells = 1; count_cells < 20; count_cells++) {
                         // while (cells.hasNext()) {//read cells of row
                         //count_cells++;
                         if (count_cells < 20) {
@@ -65,7 +65,7 @@ public class XLSXtoTXT {
                                 cell = (XSSFCell) cells.next();
                                 switch (cell.getCellType()) {
                                     case HSSFCell.CELL_TYPE_STRING:
-                                        if (count_cells == 17) {
+                                        if (count_cells == 19) {
                                             line += cell.getStringCellValue() + " ";
                                         } else {
                                             line += cell.getStringCellValue() + " # ";
@@ -140,15 +140,11 @@ public class XLSXtoTXT {
                 // System.out.println(line);
             }
 
-            // File inputfile = new File(csvFile);
-            // bufferReader = new BufferedReader(new InputStreamReader(new FileInputStream(inputfile), "UTF8"));
-            //while ((line = bufferReader.readLine()) != null) {
             
             System.out.println("number of xlsx rows:" + count_xlsx_lines);
             System.out.println("number of txt lines:" + count_txt_lines);
             wb.close();
             writer.close();
-//            bufferReader.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
