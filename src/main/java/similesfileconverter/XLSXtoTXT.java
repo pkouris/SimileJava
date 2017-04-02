@@ -42,7 +42,7 @@ public class XLSXtoTXT {
             XSSFCell cell;
             Iterator rows = sheet.rowIterator();
             Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(txtFile), "UTF-8"));
-            writer.write("TEXT # SIM # GENDER # HEAD # LEMMA # MODIFIED PRED SEMS # TENOR GENERALISED SEMANTICS # MWE TYPE # PHENOMENON # DETERMINER # ΕMPHASIS # _IWO # _IXP-CREATIVE # _IXP-EXPANSION # IXP-N, IXP-W, IXP-PUNC # _MOD # _AGR # MWO, SANP, OTHER # VAR\n");//write first line
+            writer.write("TEXT # SIM # GENDER # HEAD # LEMMA # MOD_PRED_SEMS # TEN_GEN_SEMS # MWE_TYPE # PHENOMENON # DETERMINER # ΕMPHASIS # IWO # IXP-CREATIVE # IXP-EXPANSION # IXP-N_W_PUNC # MOD # AGR # MWO # VAR\n");//write first line
             int count_xlsx_lines = 0; //it counts the number of lines of csv file
             int count_txt_lines = 0; //it counts the number of lines of txt file
             int flag = 0; //if flag is 0, it is a useful line

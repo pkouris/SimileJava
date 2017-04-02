@@ -55,14 +55,14 @@ public class Main {
         //they should be changed
         dataset_path = win_dataset_path;
         int mode = 2; //1: xlsx-->txt, 2: txt-->folia xml, 3: txt-->vector space
-        int index_of_file_header_id = 9; //it is the table index of file, header and id
+        int index_of_file_header_id = 3; //it is the table index of file, header and id
         int applyAllFiles = 0; //1: apply to all files, 0: apply to one file
 
         switch (mode) {
             case 1: //mode 1: convert csv to txt
                 System.out.println("convert xlsx to txt");
                 if (applyAllFiles == 1) { //convert all files
-                    for (int i = 1; i < 10; i++) {
+                    for (int i = 1; i < 11; i++) {
                         System.out.println("\n" + filenames[i]);
                         //String filename = filenames[i];
                         header = headers_of_foliaFile[i];
@@ -84,7 +84,7 @@ public class Main {
             case 2: //mode 2: convert txt to folia xml
                 System.out.println("convert txt to folia xml");
                 if (applyAllFiles == 1) {//convert all files
-                    for (int i = 1; i < 10; i++) {
+                    for (int i = 1; i < 11; i++) {
                         header = headers_of_foliaFile[i];
                         id = ids[i];
                         String txtFile = dataset_path + "" + filenames[i] + ".txt";
