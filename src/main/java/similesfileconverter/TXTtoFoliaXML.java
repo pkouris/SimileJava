@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package similesfileconverter;
 
 import static similesfileconverter.Main.count_entities;
-import static similesfileconverter.Main.datetime;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -26,7 +20,7 @@ import static similesfileconverter.Main.id;
 
 /**
  *
- * @author pkouris
+ * @author Panagiotis Kouris
  */
 public class TXTtoFoliaXML {
 

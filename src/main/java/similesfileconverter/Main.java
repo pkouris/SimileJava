@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package similesfileconverter;
 /**
  *
- * @author user
+ * @author Panagiotis Kouris
 */
 public class Main {
     static int count_entities = 0;
@@ -53,18 +48,17 @@ public class Main {
 
     public static void main(String[] args) {
         //they should be changed
-        dataset_path = win_dataset_path;
-        int mode = 2; //1: xlsx-->txt, 2: txt-->folia xml, 3: txt-->vector space
+        dataset_path = win_dataset_path; //It should be changed to dataset path
+        int mode = 2; //1: xlsx-->txt, 2: txt-->folia xml
         int index_of_file_header_id = 3; //it is the table index of file, header and id
-        int applyAllFiles = 0; //1: apply to all files, 0: apply to one file
+        int applyAllFiles = 0; //1: apply to all files, 0: apply to one (specific) file
 
         switch (mode) {
-            case 1: //mode 1: convert csv to txt
+            case 1: //mode 1: convert XLSX to TXT
                 System.out.println("convert xlsx to txt");
                 if (applyAllFiles == 1) { //convert all files
                     for (int i = 1; i < 11; i++) {
                         System.out.println("\n" + filenames[i]);
-                        //String filename = filenames[i];
                         header = headers_of_foliaFile[i];
                         id = ids[i];
                         String txtfile = dataset_path + "" + filenames[i] + ".txt";
@@ -102,11 +96,6 @@ public class Main {
                     TXTtoFoliaXML txtToFoliaXML = new TXTtoFoliaXML();
                     txtToFoliaXML.foliaXML_Writer(txtFile, foliaXMLFile);
                 }
-                break;
-            case 3:
-                //mode 3: convert txt to vector space
-                // System.out.println("convert folia xml to vector space");
-                // CreateVectorSpace cvs = new CreateVectorSpace();
                 break;
             default:
                 break;
